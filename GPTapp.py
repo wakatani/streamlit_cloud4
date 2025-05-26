@@ -59,13 +59,15 @@ if st.button('問題'):
             "schema": {
                 "type": "object",
                 "properties": {
+                    "問題文": {"type": "string"},
+                    "Pythonコード": {"type": "string"},
                     "選択肢１": {"type": "string"},
                     "選択肢２": {"type": "string"},
                     "選択肢３": {"type": "string"},
                     "選択肢４": {"type": "string"},
                     "答え": {"type": "number"},
                 },
-                "required": ["選択肢１", "選択肢２", "選択肢３", "選択肢４","答え"],
+                "required": ["問題文","Pythonコード","選択肢１", "選択肢２", "選択肢３", "選択肢４","答え"],
                 "additionalProperties": False,
             },
             "strict": True,
@@ -78,6 +80,8 @@ if st.button('問題'):
   st.session_state['expl'] = explanation
 
   msg=quiz_response
+  prob=quiz_respose["問題文"]
+  code=quiz_respose["Pythonコード"]
   b[0]="１：{0}".format(quiz_response["選択肢１"])
   b[1]="２：{0}".format(quiz_response["選択肢２"])
   b[2]="３：{0}".format(quiz_response["選択肢３"])
@@ -88,7 +92,9 @@ if st.button('問題'):
   counter=st.session_state['counter']
   msg="-----------------------------------------------------{0}".format(counter)
   st.write(msg)
-  msg="次の選択肢から正しいものを選べ"
+  msg=prob
+  msg+=code
+  msg+="次の選択肢から正しいものを選べ"
   st.write(msg)
   for i in range(4):
     st.write(b[i])
@@ -100,6 +106,8 @@ if st.button('答え'):
     quiz_response=st.session_state['quiz']
     explanation=st.session_state['expl']
   
+    prob=quiz_respose["問題文"]
+    code=quiz_respose["Pythonコード"]
     b[0]="１：{0}".format(quiz_response["選択肢１"])
     b[1]="２：{0}".format(quiz_response["選択肢２"])
     b[2]="３：{0}".format(quiz_response["選択肢３"])
@@ -111,6 +119,8 @@ if st.button('答え'):
     st.write(expl)
     counter=st.session_state['counter']
     msg="-----------------------------------------------------{0}".format(counter)
+    msg+=prob
+    msg+=code
     st.write(msg)
     for i in range(4):
       st.write(b[i])
