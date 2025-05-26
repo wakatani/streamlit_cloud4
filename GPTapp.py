@@ -93,8 +93,10 @@ if st.button('問題'):
   msg="-----------------------------------------------------{0}".format(counter)
   st.write(msg)
   msg=prob
-  msg+=code
-  msg+="次の選択肢から正しいものを選べ"
+  st.write(msg)
+  msg=code
+  st.write(msg)
+  msg="次の選択肢から正しいものを選べ"
   st.write(msg)
   for i in range(4):
     st.write(b[i])
@@ -119,8 +121,10 @@ if st.button('答え'):
     st.write(expl)
     counter=st.session_state['counter']
     msg="-----------------------------------------------------{0}".format(counter)
+    st.write(msg)
     msg=prob
-    msg+=code
+    st.write(msg)
+    msg=code
     st.write(msg)
     for i in range(4):
       st.write(b[i])
