@@ -51,7 +51,7 @@ if st.button('問題'):
       {"role": "system",\
                "content":"あなたはクイズ出題者です。知っている知識を駆使して問題を作ります。"},
       {"role": "user",\
-               "content": "「{0}」の文章に関して、Pythonの4択問題を考えます。問題にはPythonコードの一部を穴埋めする問題とします。問題のPythonコードと問題文と、4個の選択肢の文言とその答の番号を示せ。選択肢の文言は選択肢の番号は不要である。また、Pythonコードにはコメントは不要である。正解の選択肢以外の選択肢の文言は間違っているようにすること。".format(explanation)}],
+               "content": "「{0}」の文章に関して、Pythonの4択問題を考えます。問題にはPythonコードの一部を穴埋めする問題とします。問題のPythonコードと問題文と、4個の選択肢の文言とその答の番号を示せ。選択肢の文言は選択肢の番号は不要である。また、Pythonコードには改行をして、コメントは不要である。正解の選択肢以外の選択肢の文言は間違っているようにすること。".format(explanation)}],
     response_format={
         "type": "json_schema",
         "json_schema": {
@@ -95,7 +95,9 @@ if st.button('問題'):
   msg=prob
   st.write(msg)
   msg=code
+  st.write("*************")
   st.write(msg)
+  st.write("*************")
   msg="次の選択肢から正しいものを選べ"
   st.write(msg)
   for i in range(4):
@@ -125,7 +127,9 @@ if st.button('答え'):
     msg=prob
     st.write(msg)
     msg=code
+    st.write("*************")
     st.write(msg)
+    st.write("*************")
     for i in range(4):
       st.write(b[i])
     msg="-----------------------------------------------------"
