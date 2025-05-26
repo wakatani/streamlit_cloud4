@@ -96,7 +96,7 @@ if st.button('問題'):
   st.write(msg)
   msg=code
   st.write("*************")
-  st.write(msg)
+  st.text(msg)
   st.write("*************")
   msg="次の選択肢から正しいものを選べ"
   st.write(msg)
@@ -128,7 +128,7 @@ if st.button('答え'):
     st.write(msg)
     msg=code
     st.write("*************")
-    st.write(msg)
+    st.text(msg)
     st.write("*************")
     for i in range(4):
       st.write(b[i])
