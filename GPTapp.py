@@ -119,7 +119,8 @@ if st.button('答え'):
     st.write(expl)
     counter=st.session_state['counter']
     msg="-----------------------------------------------------{0}".format(counter)
-    msg+=prob
+    st.write(msg)
+    msg=prob
     msg+=code
     st.write(msg)
     for i in range(4):
