@@ -81,7 +81,7 @@ if st.button('問題'):
 
   msg=quiz_response
   prob=quiz_response["問題文"]
-  code=quiz_response["Pythonコード"]
+  code="{0}".format(quiz_response["Pythonコード"])
   b[0]="１：{0}".format(quiz_response["選択肢１"])
   b[1]="２：{0}".format(quiz_response["選択肢２"])
   b[2]="３：{0}".format(quiz_response["選択肢３"])
@@ -109,7 +109,7 @@ if st.button('答え'):
     explanation=st.session_state['expl']
   
     prob=quiz_response["問題文"]
-    code=quiz_response["Pythonコード"]
+    code="{0}".format(quiz_response["Pythonコード"])
     b[0]="１：{0}".format(quiz_response["選択肢１"])
     b[1]="２：{0}".format(quiz_response["選択肢２"])
     b[2]="３：{0}".format(quiz_response["選択肢３"])
