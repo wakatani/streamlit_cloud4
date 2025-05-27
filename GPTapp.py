@@ -43,7 +43,7 @@ expl=""
 if 'counter' not in st.session_state:
   st.session_state['counter'] = 0
 
-if st.button('問題'):
+if st.button('問題(Quiz)'):
 #
 # 文章群から文章をランダムに選ぶ
 #
@@ -111,7 +111,7 @@ if st.button('問題'):
   msg="-----------------------------------------------------"
   st.write(msg)
 
-if st.button('答え'):
+if st.button('答え(Answer)'):
   try:
     quiz_response=st.session_state['quiz']
     explanation=st.session_state['expl']
