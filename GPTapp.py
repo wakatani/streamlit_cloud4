@@ -18,7 +18,7 @@ client = OpenAI()
 
 #
 
-st.title("■■■ Let's study scikit-learn ■■■")
+st.title("■ Let's study scikit-learn ■")
 
 #
 # 問題作成の元になる文章群
