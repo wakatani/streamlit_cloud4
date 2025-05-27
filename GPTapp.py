@@ -25,7 +25,7 @@ lang = st.radio(label='Which lang.?',
                  index=0,
                  horizontal=True,
 )
-if lang==0:
+if lang=="Japanese":
   language="日本語"
 else:
   language="英語"
