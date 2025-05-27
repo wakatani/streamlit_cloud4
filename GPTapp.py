@@ -18,7 +18,7 @@ client = OpenAI()
 
 #
 
-st.title("■■■ scikit-learnの自習 ■■■")
+st.title("■■■ scikit-learnの自習 (self-study) ■■■")
 
 #
 # 問題作成の元になる文章群
@@ -104,7 +104,7 @@ if st.button('問題(Quiz)'):
   st.write(msg)
   msg=code
   st.code(msg)
-  msg="次の選択肢から正しいものを選べ"
+  msg="次の選択肢から正しいものを選べ (Choose the correct one)"
   st.write(msg)
   for i in range(4):
     st.write(b[i])
