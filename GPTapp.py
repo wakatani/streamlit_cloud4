@@ -25,6 +25,10 @@ lang = st.radio(label='Which lang.?',
                  index=0,
                  horizontal=True,
 )
+if lang==0:
+  language="日本語"
+else:
+  language="英語"
 
 #
 # 問題作成の元になる文章群
@@ -65,7 +69,7 @@ if st.button('問題(Quiz)'):
       {"role": "system",\
                "content":"あなたは機械学習の専門家です。知っている知識を駆使して初心者向けの機械学習の学習のための問題を作ります。"},
       {"role": "user",\
-               "content": "「{0}」の文章に関して、Pythonの4択問題を考えます。問題にはPythonコードの一部を穴埋めする問題とします。問題のPythonコードと問題文と、4個の選択肢の文言とその答の番号を示せ。選択肢の文言は選択肢の番号は不要である。また、Pythonコードは改行をつけること。また、Pythonコードではデータの初期化をすること。「{1}」を守ること。正解の選択肢以外の選択肢の文言は間違っているようにすること。英語で。".format(explanation,probtype)}],
+               "content": "「{0}」の文章に関して、Pythonの4択問題を考えます。問題にはPythonコードの一部を穴埋めする問題とします。問題のPythonコードと問題文と、4個の選択肢の文言とその答の番号を示せ。選択肢の文言は選択肢の番号は不要である。また、Pythonコードは改行をつけること。また、Pythonコードではデータの初期化をすること。「{1}」を守ること。正解の選択肢以外の選択肢の文言は間違っているようにすること。{2}で。".format(explanation,probtype,language)}],
     response_format={
         "type": "json_schema",
         "json_schema": {
