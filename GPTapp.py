@@ -132,7 +132,7 @@ if st.button('答え(Answer)'):
     b[1]="２：{0}".format(quiz_response["選択肢２"])
     b[2]="３：{0}".format(quiz_response["選択肢３"])
     b[3]="４：{0}".format(quiz_response["選択肢４"])
-    ans ="答えは{0}です。".format(quiz_response["答え"])
+    ans ="答えは{0}です。(The answer is {0}.)".format(quiz_response["答え"])
     expl="  [ {0} ]".format(explanation)
   
     st.write(ans)
@@ -148,9 +148,9 @@ if st.button('答え(Answer)'):
       st.write(b[i])
     msg="-----------------------------------------------------"
     st.write(msg)
-    msg="◇◇◇ 次の問題は「問題」を押してください (click Quiz)"
+    msg="◇◇◇ 次の問題は「問題」を押してください (click Quiz, next.)"
     st.write(msg)
 
   except:
-      st.write('まず「問題」を押してください (click Quiz)')
+      st.write('まず「問題」を押してください (click Quiz, first.)')
 
