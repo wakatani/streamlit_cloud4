@@ -20,6 +20,12 @@ client = OpenAI()
 
 st.title("■ Let's study scikit-learn ■")
 
+lang = st.radio(label='Which lang.?',
+                 options=('Japanese', 'English'),
+                 index=0,
+                 horizontal=True,
+)
+
 #
 # 問題作成の元になる文章群
 #
