@@ -18,7 +18,8 @@ client = OpenAI()
 
 #
 
-st.title("■■■ scikit-learnの自習 (self-study) ■■■")
+st.title("■■■ scikit-learn ■■■")
+st.title("■■■ 自習ページ (self-study) ■■■")
 
 #
 # 問題作成の元になる文章群
