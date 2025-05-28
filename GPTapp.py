@@ -82,6 +82,7 @@ if st.button('問題 (Quiz)'):
                 "properties": {
                     "問題文": {"type": "string"},
                     "Pythonコード": {"type": "string"},
+                    "正しいPythonコード": {"type": "string"},
                     "選択肢１": {"type": "string"},
                     "選択肢２": {"type": "string"},
                     "選択肢３": {"type": "string"},
