@@ -72,7 +72,7 @@ if st.button('問題 (Quiz)'):
       {"role": "system",\
                "content":"あなたは機械学習の専門家です。知っている知識を駆使して初心者向けの機械学習の学習のための問題を作ります。"},
       {"role": "user",\
-               "content": "「{0}」の文章に関して、Pythonの4択問題を考えます。問題にはPythonコードの一部を穴埋めする問題とします。問題のPythonコードと問題文と、4個の選択肢の文言とその答の番号を示せ。選択肢の文言は選択肢の番号は不要である。また、Pythonコードは改行をつけること。また、Pythonコードではデータの初期化をすること。「{1}」を守ること。正解の選択肢以外の選択肢の文言は間違っているようにすること。{2}で。".format(explanation,probtype,language)}],
+               "content": "「{0}」の文章に関して、Pythonの4択問題を考えます。問題にはPythonコードの一部を穴埋めする問題とします。問題のPythonコードと問題文と正しいPythonコードと、4個の選択肢の文言とその答の番号を示せ。選択肢の文言は選択肢の番号は不要である。また、Pythonコードは改行をつけること。また、Pythonコードではデータの初期化をすること。「{1}」を守ること。正解の選択肢以外の選択肢の文言は間違っているようにすること。{2}で。".format(explanation,probtype,language)}],
     response_format={
         "type": "json_schema",
         "json_schema": {
@@ -82,6 +82,7 @@ if st.button('問題 (Quiz)'):
                 "properties": {
                     "問題文": {"type": "string"},
                     "Pythonコード": {"type": "string"},
+                    "正しいPythonコード": {"type": "string"},
                     "選択肢１": {"type": "string"},
                     "選択肢２": {"type": "string"},
                     "選択肢３": {"type": "string"},
@@ -103,6 +104,7 @@ if st.button('問題 (Quiz)'):
   msg=quiz_response
   prob=quiz_response["問題文"]
   code="{0}".format(quiz_response["Pythonコード"])
+  correctcode="{0}".format(quiz_response["正しいPythonコード"])
   b[0]="１：{0}".format(quiz_response["選択肢１"])
   b[1]="２：{0}".format(quiz_response["選択肢２"])
   b[2]="３：{0}".format(quiz_response["選択肢３"])
@@ -131,6 +133,7 @@ if st.button('答え (Answer)'):
   
     prob=quiz_response["問題文"]
     code="{0}".format(quiz_response["Pythonコード"])
+    correctcode="{0}".format(quiz_response["正しいPythonコード"])
     b[0]="１：{0}".format(quiz_response["選択肢１"])
     b[1]="２：{0}".format(quiz_response["選択肢２"])
     b[2]="３：{0}".format(quiz_response["選択肢３"])
@@ -149,6 +152,9 @@ if st.button('答え (Answer)'):
     st.code(msg)
     for i in range(4):
       st.write(b[i])
+    st.write('□正しいプログラム (correct code)□')
+    msg=correctcode
+    st.code(msg)
     msg="-----------------------------------------------------"
     st.write(msg)
     msg="◇◇◇ 次の問題は「問題」を押してください (click Quiz, again.)"
