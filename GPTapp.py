@@ -82,7 +82,6 @@ if st.button('問題 (Quiz)'):
                 "properties": {
                     "問題文": {"type": "string"},
                     "Pythonコード": {"type": "string"},
-                    "正しいPythonコード": {"type": "string"},
                     "選択肢１": {"type": "string"},
                     "選択肢２": {"type": "string"},
                     "選択肢３": {"type": "string"},
@@ -104,7 +103,6 @@ if st.button('問題 (Quiz)'):
   msg=quiz_response
   prob=quiz_response["問題文"]
   code="{0}".format(quiz_response["Pythonコード"])
-  correctcode="{0}".format(quiz_response["正しいPythonコード"])
   b[0]="１：{0}".format(quiz_response["選択肢１"])
   b[1]="２：{0}".format(quiz_response["選択肢２"])
   b[2]="３：{0}".format(quiz_response["選択肢３"])
@@ -133,7 +131,6 @@ if st.button('答え (Answer)'):
   
     prob=quiz_response["問題文"]
     code="{0}".format(quiz_response["Pythonコード"])
-    correctcode="{0}".format(quiz_response["正しいPythonコード"])
     b[0]="１：{0}".format(quiz_response["選択肢１"])
     b[1]="２：{0}".format(quiz_response["選択肢２"])
     b[2]="３：{0}".format(quiz_response["選択肢３"])
@@ -152,9 +149,6 @@ if st.button('答え (Answer)'):
     st.code(msg)
     for i in range(4):
       st.write(b[i])
-    st.write('□正しいプログラム (correct code)□')
-    msg=correctcode
-    st.code(msg)
     msg="-----------------------------------------------------"
     st.write(msg)
     msg="◇◇◇ 次の問題は「問題」を押してください (click Quiz, again.)"
