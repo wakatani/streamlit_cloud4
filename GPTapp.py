@@ -34,13 +34,16 @@ else:
 # 問題作成の元になる文章群
 #
 explanationList=[
+    "scikit-learnでLasso回帰を使う場合は、Lasso関数を用います。",
     "scikit-learnでRidge回帰を使う場合は、Ridge関数を用います。",
     "scikit-learnで線形回帰を使う場合は、LinearRegression関数を用います。"
 ]
 
 probtypeList=[
     "関数の名前を問うようにしろ。",
+    "オプションの値の大小について問うようにしろ。",
     "オプションについて問うようにしろ。",
+    "Numpyと組み合せるようにしろ。",
     "pandasと組み合せるようにしろ。"
 ]
 
