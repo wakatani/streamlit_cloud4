@@ -124,45 +124,6 @@ if st.button('問題 (Quiz)'):
   msg="-----------------------------------------------------"
   st.write(msg)
 
-'''
-  noIdea="わかりません (no idea)"
-  aaa = st.radio(label='正しいのは？ (Which is correct?)',
-                 options=(b[0], b[1], b[2], b[3], noIdea),
-                 index=4,
-  )
-  if aaa != noIdea:
-    try:
-      quiz_response=st.session_state['quiz']
-      explanation=st.session_state['expl']
-  
-      prob=quiz_response["問題文"]
-      code="{0}".format(quiz_response["Pythonコード"])
-      b[0]="１：{0}".format(quiz_response["選択肢１"])
-      b[1]="２：{0}".format(quiz_response["選択肢２"])
-      b[2]="３：{0}".format(quiz_response["選択肢３"])
-      b[3]="４：{0}".format(quiz_response["選択肢４"])
-      ans ="答えは{0}です。(The answer is {0}.)".format(quiz_response["答え"])
-      expl="  [ {0} ]".format(explanation)
-  
-      st.write(ans)
-      st.write(expl)
-      counter=st.session_state['counter']
-      msg="-----------------------------------------------------{0}".format(counter)
-      st.write(msg)
-      msg=prob
-      st.write(msg)
-      msg=code
-      st.code(msg)
-      for i in range(4):
-        st.write(b[i])
-      msg="-----------------------------------------------------"
-      st.write(msg)
-      msg="◇◇◇ 次の問題は「問題」を押してください (click Quiz, again.)"
-      st.write(msg)
-
-    except:
-      st.write('まず「問題」を押してください (click Quiz, first.)')
-'''
   
 if st.button('答え (Answer)'):
   try:
