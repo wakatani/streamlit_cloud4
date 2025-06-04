@@ -125,7 +125,8 @@ if st.button('問題 (Quiz)'):
   st.write(msg)
 
   aaa = st.radio(label='正しいのは？ (Which is correct?)',
-                 options=(b[0], b[1], b[2], b[3]),
+                 options=(b[0], b[1], b[2], b[3], "わかりません (no idea)"),
+                 index=4,
   )
 
   
