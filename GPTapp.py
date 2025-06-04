@@ -124,11 +124,12 @@ if st.button('問題 (Quiz)'):
   msg="-----------------------------------------------------"
   st.write(msg)
 
+  noIdea="わかりません (no idea)"
   aaa = st.radio(label='正しいのは？ (Which is correct?)',
-                 options=(b[0], b[1], b[2], b[3], "わかりません (no idea)"),
+                 options=(b[0], b[1], b[2], b[3], noIdea),
                  index=4,
   )
-  if aaa:
+  if aaa != noIdea:
     try:
       quiz_response=st.session_state['quiz']
       explanation=st.session_state['expl']
