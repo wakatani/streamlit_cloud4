@@ -124,7 +124,7 @@ if st.button('問題 (Quiz)'):
   msg="-----------------------------------------------------"
   st.write(msg)
 
-  '''
+'''
   noIdea="わかりません (no idea)"
   aaa = st.radio(label='正しいのは？ (Which is correct?)',
                  options=(b[0], b[1], b[2], b[3], noIdea),
@@ -162,9 +162,7 @@ if st.button('問題 (Quiz)'):
 
     except:
       st.write('まず「問題」を押してください (click Quiz, first.)')
-  '''
-
-  
+'''
   
 if st.button('答え (Answer)'):
   try:
